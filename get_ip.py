@@ -25,9 +25,6 @@ class GUI(tk.Frame):
 			ip = socket.gethostbyname(hostname)
 			self.entry.delete(0, len(self.entry.get()))
 			self.entry.insert(0, ip)
-		except ValueError:
-			self.entry.delete(0, len(self.entry.get()))
-			self.entry.insert(0, "Invalid Hostname")
 		except:
 			self.entry.delete(0, len(self.entry.get()))
 			self.entry.insert(0, "Invalid Hostname")
@@ -37,7 +34,6 @@ def main():
 	root = tk.Tk()
 	gui = GUI(root)
 	gui.mainloop()
-
 
 
 if __name__ == '__main__':
